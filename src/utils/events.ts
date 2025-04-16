@@ -1,3 +1,5 @@
+import { LS, LSKeys } from '../ls';
+
 declare global {
   interface Window {
     dataLayer: unknown[];
@@ -5,12 +7,7 @@ declare global {
   }
 }
 
-type Payload = {
-  id: number;
-  add: 1 | 0;
-};
-
-export const sendDataToGA = async (payload: Payload) => {
+export const sendDataToGA = async () => {
   try {
     const now = new Date();
     const date = `${now.getFullYear()}-${
@@ -22,7 +19,7 @@ export const sendDataToGA = async (payload: Payload) => {
       {
         redirect: 'follow',
         method: 'POST',
-        body: JSON.stringify({ date, ...payload, var: 'var2' }),
+        body: JSON.stringify({ date, variant: 'variant1', id: LS.getItem(LSKeys.UserId, 0) }),
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },

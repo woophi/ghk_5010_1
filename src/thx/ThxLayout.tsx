@@ -12,15 +12,20 @@ export const ThxLayout = () => {
       <div className={thxSt.container}>
         <img src={sparkles} width={80} height={80} className={thxSt.rocket} />
         <Typography.TitleResponsive font="system" tag="h1" view="small" style={{ margin: '24px 0 12px' }} weight="bold">
-          Не получилось добавить Доход на остаток в подписку
+          Не получилось подключить
         </Typography.TitleResponsive>
         <Typography.Text tag="p" view="primary-medium" defaultMargins={false}>
-          Уже знаем в чём дело и чиним. Попробуйте ещё раз позже
+          Подписка с опциями от Альфа-Инвестиций временно недоступна. Попробуйте позже
         </Typography.Text>
       </div>
       <Gap size={96} />
       <div className={appSt.bottomBtn}>
-        <ButtonMobile href="https://alfa.me/ght" block view="secondary">
+        <ButtonMobile
+          href="https://alfa.me/ght"
+          block
+          view="secondary"
+          onClick={() => window.gtag('event', '5010_wait_var1')}
+        >
           К Альфа-Смарт
         </ButtonMobile>
       </div>

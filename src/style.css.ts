@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 const bottomBtn = style({
   position: 'fixed',
@@ -49,6 +49,12 @@ const boxRow2 = style({
   borderRadius: '1rem',
   backgroundColor: '#F3F4F5',
   flexDirection: 'column',
+  overflow: 'hidden',
+});
+
+const boxRow2Wrap = style({
+  position: 'relative',
+  marginTop: '1rem',
 });
 const boxRow2text = style({
   display: 'flex',
@@ -68,6 +74,22 @@ const positiveBtn = style({
   color: '#0D9336',
 });
 
+export const stepStyle = style({});
+
+globalStyle(`${stepStyle} > div > div > div:first-child`, {
+  backgroundColor: 'var(--color-light-neutral-translucent-1300)',
+  color: 'var(--color-light-text-primary-inverted)',
+});
+
+const tag = style({
+  position: 'absolute',
+  top: '-16px',
+  left: '16px',
+  backgroundColor: '#EF3124 !important',
+  borderRadius: '8px !important',
+  border: 'none !important',
+});
+
 export const appSt = {
   bottomBtn,
   container,
@@ -78,4 +100,7 @@ export const appSt = {
   boxRow2text,
   rowText,
   positiveBtn,
+  stepStyle,
+  tag,
+  boxRow2Wrap,
 };

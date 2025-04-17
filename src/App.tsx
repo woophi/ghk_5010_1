@@ -302,11 +302,11 @@ export const App = () => {
         </Typography.TitleResponsive>
 
         <div>
-          <div className={appSt.rowText}>
+          <div className={appSt.rowText} onClick={() => window.gtag('event', '5010_FAQ_var1')}>
             <CDNIcon name="glyph_question-circle_m" />
             <Typography.Text view="primary-medium">Частые вопросы</Typography.Text>
           </div>
-          <div className={appSt.rowText}>
+          <div className={appSt.rowText} onClick={() => window.gtag('event', '5010_moreinfo_var1')}>
             <CDNIcon name="glyph_document-lines_m" />
             <Typography.Text view="primary-medium">Подробные условия</Typography.Text>
           </div>
@@ -314,7 +314,9 @@ export const App = () => {
 
         <Typography.Text view="primary-small" color="secondary">
           Нажимая «К подключению», вы соглашаетесь с{' '}
-          <span style={{ textDecoration: 'underline' }}>новыми условиями обслуживания</span>
+          <span style={{ textDecoration: 'underline' }} onClick={() => window.gtag('event', '5010_newinfo_var1')}>
+            новыми условиями обслуживания
+          </span>
         </Typography.Text>
       </div>
       <Gap size={96} />

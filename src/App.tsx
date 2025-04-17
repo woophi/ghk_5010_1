@@ -138,10 +138,6 @@ export const App = () => {
             </Typography.Text>
           </div>
 
-          <Typography.TitleResponsive style={{ marginTop: '1rem' }} tag="h3" view="small" font="system" weight="medium">
-            Привелегии
-          </Typography.TitleResponsive>
-
           <div>
             {dataStep0.map(item => (
               <PureCell key={item.title} verticalPadding="default">
